@@ -12,6 +12,7 @@ namespace NewsReader.Services.Implementations
 
         public IList<string> GetSources()
         {
+            // Can be sourced from an http source in a real time app.
             return new List<string>()
             {
                 "https://feeds.bbci.co.uk/news/uk/rss.xml",

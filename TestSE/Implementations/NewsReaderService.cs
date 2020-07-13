@@ -7,7 +7,7 @@ using NewsReader.Services.Models;
 
 namespace NewsReader.Services.Implementations
 {
-    public class NewsReader : INewsReader
+    public class NewsReaderService : INewsReaderService
     {
         #region Private Members
 
@@ -18,7 +18,7 @@ namespace NewsReader.Services.Implementations
 
         #region Constructor
 
-        public NewsReader(IFeedSourceProvider feedSourceProvider, IFeedReaderService feedReaderService)
+        public NewsReaderService(IFeedSourceProvider feedSourceProvider, IFeedReaderService feedReaderService)
         {
             _feedSourceProvider = feedSourceProvider;
             _feedReaderService = feedReaderService;
@@ -35,7 +35,10 @@ namespace NewsReader.Services.Implementations
             foreach (var feedSource in feedSources)
             {
                 var feed = await _feedReaderService.GetFeedAsync(feedSource);
-                feedToReturn.Add(feed);
+                if (feed != null)
+                {
+                    feedToReturn.Add(feed);
+                }
             }
             return feedToReturn;
         }

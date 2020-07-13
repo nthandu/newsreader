@@ -6,7 +6,7 @@ using NewsReader.Services.Models;
 
 namespace NewsReader.Services.Interfaces
 {
-    public interface INewsReader
+    public interface INewsReaderService
     {
         /// <summary>
         /// Returns the news feed from available sources.

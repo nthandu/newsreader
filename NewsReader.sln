@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsReader", "NewsReader\Ne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsReader.Services", "TestSE\NewsReader.Services.csproj", "{73FA63ED-17B5-4F34-A892-8D117EF50A42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsReader.Services.Tests", "NewsReader.Services.Tests\NewsReader.Services.Tests.csproj", "{532FB915-3BB9-4C55-A525-691B698F5778}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,5 +69,17 @@ Global
 		{73FA63ED-17B5-4F34-A892-8D117EF50A42}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{73FA63ED-17B5-4F34-A892-8D117EF50A42}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{73FA63ED-17B5-4F34-A892-8D117EF50A42}.Release|iPhone.Build.0 = Release|Any CPU
+		{532FB915-3BB9-4C55-A525-691B698F5778}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{532FB915-3BB9-4C55-A525-691B698F5778}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{532FB915-3BB9-4C55-A525-691B698F5778}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{532FB915-3BB9-4C55-A525-691B698F5778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{532FB915-3BB9-4C55-A525-691B698F5778}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{532FB915-3BB9-4C55-A525-691B698F5778}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{532FB915-3BB9-4C55-A525-691B698F5778}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{532FB915-3BB9-4C55-A525-691B698F5778}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{532FB915-3BB9-4C55-A525-691B698F5778}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{532FB915-3BB9-4C55-A525-691B698F5778}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{532FB915-3BB9-4C55-A525-691B698F5778}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{532FB915-3BB9-4C55-A525-691B698F5778}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

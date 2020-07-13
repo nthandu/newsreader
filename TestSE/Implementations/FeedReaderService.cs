@@ -45,8 +45,14 @@ namespace NewsReader.Services.Implementations
         {
             if (string.IsNullOrEmpty(feedSource))
                 return null;
-
-            return await FeedReader.ReadAsync(feedSource);
+            try
+            {
+                return await FeedReader.ReadAsync(feedSource);
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
         }
     }
 }
