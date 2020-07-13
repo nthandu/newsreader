@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using NewsReader.Services.Interfaces;
 using UIKit;
 
 namespace NewsReader.iOS
@@ -24,8 +25,17 @@ namespace NewsReader.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
+            RegisterDependencies();
             return base.FinishedLaunching(app, options);
+        }
+
+        void RegisterDependencies()
+        {
+            App.RegisterType<IFeedSourceProvider, Services.Implementations.FeedSourceProvider>();
+            App.RegisterType<IFeedReaderService, Services.Implementations.FeedReaderService>();
+            App.RegisterType<INewsReaderService, Services.Implementations.NewsReaderService>();
+
+            App.BuildContainer();
         }
     }
 }
