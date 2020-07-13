@@ -1,5 +1,6 @@
 ﻿using System;
 using Autofac;
+using NewsReader.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
@@ -15,7 +16,7 @@ namespace NewsReader
         {
             InitializeComponent();
             DependencyResolver.ResolveUsing(type => container.IsRegistered(type) ? container.Resolve(type) : null);
-            MainPage = new MainPage();
+            MainPage = new NavigationPage( new NewsItemListPage());
         }
 
         protected override void OnStart()

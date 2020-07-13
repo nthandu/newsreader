@@ -18,4 +18,8 @@
   <ItemGroup>
     <ProjectReference Include="..\TestSE\NewsReader.Services.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
 </Project>
