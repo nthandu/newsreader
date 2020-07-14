@@ -41,12 +41,23 @@ namespace NewsReader.Services.Implementations
             }
         }
 
+        /// <summary>
+        /// Retuns feed for the given source.
+        /// </summary>
+        /// <param name="feedSource"></param>
+        /// <returns></returns>
         public async Task<Feed> GetFeedAsync(string feedSource)
         {
             if (string.IsNullOrEmpty(feedSource))
                 return null;
-
-            return await FeedReader.ReadAsync(feedSource);
+            try
+            {
+                return await FeedReader.ReadAsync(feedSource);
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
         }
     }
 }

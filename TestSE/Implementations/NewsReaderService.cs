@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using CodeHollow.FeedReader;
+using NewsReader.Services.Extensions;
 using NewsReader.Services.Interfaces;
 using NewsReader.Services.Models;
 
 namespace NewsReader.Services.Implementations
 {
-    public class NewsReader : INewsReader
+    public class NewsReaderService : INewsReaderService
     {
         #region Private Members
 
@@ -18,7 +20,7 @@ namespace NewsReader.Services.Implementations
 
         #region Constructor
 
-        public NewsReader(IFeedSourceProvider feedSourceProvider, IFeedReaderService feedReaderService)
+        public NewsReaderService(IFeedSourceProvider feedSourceProvider, IFeedReaderService feedReaderService)
         {
             _feedSourceProvider = feedSourceProvider;
             _feedReaderService = feedReaderService;
@@ -28,16 +30,19 @@ namespace NewsReader.Services.Implementations
 
         #region INewsReader implementation
 
-        public async Task<IList<Feed>> GetNewsFeedAsync()
+        public async Task<IList<NewsItem>> GetNewsFeedAsync()
         {
-            var feedToReturn = new List<Feed>();
+            var feedToReturn = new List<NewsItem>();
             var feedSources = _feedSourceProvider.GetSources();
             foreach (var feedSource in feedSources)
             {
                 var feed = await _feedReaderService.GetFeedAsync(feedSource);
-                feedToReturn.Add(feed);
+                if (feed != null && feed.Items != null)
+                {
+                    feedToReturn.AddRange(feed.Items.Select(s => s.ToNewsItem(feed.Title)));
+                }
             }
-            return feedToReturn;
+            return feedToReturn.OrderByDescending(s=>s.PublishedDate).ToList();
         }
 
         #endregion

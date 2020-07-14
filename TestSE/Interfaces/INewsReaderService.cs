@@ -6,12 +6,12 @@ using NewsReader.Services.Models;
 
 namespace NewsReader.Services.Interfaces
 {
-    public interface INewsReader
+    public interface INewsReaderService
     {
         /// <summary>
         /// Returns the news feed from available sources.
         /// </summary>
         /// <returns></returns>
-        Task<IList<Feed>> GetNewsFeedAsync();
+        Task<IList<NewsItem>> GetNewsFeedAsync();
     }
 }

@@ -132,5 +132,9 @@
       <Project>{468657D3-EBA6-456F-863E-C3165CE99690}</Project>
       <Name>NewsReader</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TestSE\NewsReader.Services.csproj">
+      <Project>{73FA63ED-17B5-4F34-A892-8D117EF50A42}</Project>
+      <Name>NewsReader.Services</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
