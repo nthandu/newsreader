@@ -4,7 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
              x:Class="NewsReader.Views.NewsItemListPage" x:Name="NewsItemListView"
              Title="Latest News" >
-    <StackLayout>
+    <StackLayout >
+        <Picker x:Name="CategoryPicker"
+        Title="Filter By"
+         ItemsSource="{Binding FilerSource, Mode=TwoWay}" Margin="5" SelectedItem="{Binding SelectedCategory}">
+        </Picker>
         <ListView x:Name="NewsListView"
             ItemsSource="{Binding NewsItems}"
               RowHeight="80" >
